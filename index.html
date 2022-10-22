@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <br /><br />
+        <hr />
+        <br /><br />
+        <!--  SINGLE FILE -->
+        <!-- <form action="/uploadfile" enctype="multipart/form-data" method="POST">
+            <input type="file" name="myFile" />
+            <input type="submit" value="Upload a file" />
+        </form>
+        <br /><br />
+        <hr />
+        <br /><br /> -->
+
+        <!-- MULTIPLE FILES -->
+        <!-- <form
+            action="/uploadmultiple"
+            enctype="multipart/form-data"
+            method="POST"
+        >
+            Select images: <input type="file" name="myFiles" multiple />
+            <input type="submit" value="Upload your multiple files" />
+        </form>
+        <br /><br />
+        <hr />
+        <br /><br /> -->
+
+        <!-- MULTIPLE FIELD -->
+        <form
+            action="/uploadphotoanddocs"
+            enctype="multipart/form-data"
+            method="POST"
+        >
+            <label for="">Image</label>
+            <input type="file" name="Image" multiple />
+            <label for="">Docs</label>
+            <input type="file" name="Docs" multiple />
+            <input type="submit" value="Upload Image and Docs" />
+        </form>
+        <br /><br />
+        <hr />
+        <br /><br />
+
+        <!--  SIMPLE FORM DATA UPLOAD -->
+        <!-- <form
+            action="/simpleformdata"
+            enctype="multipart/form-data"
+            method="POST"
+        >
+            <input type="text" name="name" />
+            <input type="submit" value="Submit" />
+        </form> -->
+    </body>
+</html>

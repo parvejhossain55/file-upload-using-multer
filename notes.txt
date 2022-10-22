@@ -1,0 +1,58 @@
+
+// File Object er Value
+{
+  fieldname: 'myFile',
+  originalname: 'akiij biri.PNG',
+  encoding: '7bit',
+  mimetype: 'image/png'
+}
+
+// single file a mimetyee check korar condtion
+let upload = multer({
+    dest: upload_path,
+    limits: {
+        fileSize: 1000000, // 1mb
+    },
+    fileFilter: (req, file, cb) => {
+        if (
+            file.mimetype === "image/png" ||
+            file.mimetype === "image/jpg" ||
+            file.mimetype === "image/jpeg"
+        ) {
+            cb(null, true);
+        } else {
+            cb(Error("Only .jpg, .jpeg, .png format allow"));
+            // cb(null, false);
+        }
+    },
+});
+
+
+// multiple filed a file type check korar condtion
+let upload = multer({
+    dest: upload_path,
+    limits: {
+        fileSize: 1000000, // 1mb
+    },
+    fileFilter: (req, file, cb) => {
+        if (file.fieldname === "Image") {
+            if (
+                file.mimetype === "image/png" ||
+                file.mimetype === "image/jpg" ||
+                file.mimetype === "image/jpeg"
+            ) {
+                cb(null, true);
+            } else {
+                cb(Error("Only .jpg, .jpeg, .png format allow"));
+                // cb(null, false);
+            }
+        } else if (file.fieldname === "Docs") {
+            if (file.mimetype === "application/pdf") {
+                cb(null, true);
+            } else {
+                cb(Error("Only .pdf format allow"));
+                // cb(null, false);
+            }
+        }
+    },
+});
